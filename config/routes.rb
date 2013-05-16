@@ -1,6 +1,10 @@
 Todo::Application.routes.draw do
+
   resources :users, :only => [:new, :create]
-  root 'users#new'
+  resources :sessions, :only => [:new, :create] do
+    delete :destroy, :on => :collection
+  end
+  root 'sessions#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

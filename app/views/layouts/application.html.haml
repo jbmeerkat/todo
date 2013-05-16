@@ -29,6 +29,10 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to t('main_page'), root_path
+            - if current_user
+              %ul.nav.pull-right
+                %li.navbar-text= current_user.email
+                %li= link_to t('sign_out'), sessions_path, :method => :delete
 
     .container-fluid
       .row-fluid
