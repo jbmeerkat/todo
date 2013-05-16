@@ -1,0 +1,18 @@
+= form_for @user, :html => {:class => 'form-horizontal'} do |f|
+  %fieldset
+    %legend= t('sign_up')
+    .control-group
+      = f.label :email, :class => 'control-label'
+      .controls
+        = f.text_field :email, :type => 'email', :placeholder => 'user@example.com'
+    .control-group
+      = f.label :password, :class => 'control-label'
+      .controls
+        = f.password_field :password
+    .control-group
+      = f.label :password_confirmation, :class => 'control-label'
+      .controls
+        = f.password_field :password_confirmation
+    .control-group
+      .controls
+        = f.submit t('submit'), :class => 'btn'
