@@ -3,7 +3,7 @@
     = @story.name
     %small
       = link_to icon('icon-edit'), edit_story_path(@story)
-      = link_to icon('icon-trash'), @story, :method => :delete, :confirm => t('r_u_sure')
+      = link_to icon('icon-trash'), @story, :method => :delete, :data => {:confirm => t('r_u_sure')}
 
 %p.well.well-small= @story.description
 
