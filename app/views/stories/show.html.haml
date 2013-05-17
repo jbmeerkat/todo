@@ -1,0 +1,20 @@
+.page-header
+  %h3
+    = @story.name
+    %small
+      = link_to icon('icon-edit'), edit_story_path(@story)
+      = link_to icon('icon-trash'), @story, :method => :delete, :confirm => t('r_u_sure')
+
+%p.well.well-small= @story.description
+
+%ul.inline
+  %li
+    %small
+      = succeed ':' do
+        = t('story_owner') || t('unknown')
+      = @story.user.try(:email)
+  %li
+    %small
+      = succeed ':' do
+        = t('created_at')
+      = @story.created_at.to_formatted_s(:long)
