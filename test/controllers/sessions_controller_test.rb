@@ -24,7 +24,7 @@ class SessionsControllerTest < ActionController::TestCase
   test 'should log out' do
     session[:user_id] = @user.id
     delete :destroy
-    assert_redirected_to root_url
+    assert_redirected_to new_session_path
     assert_nil session[:user_id]
   end
 
