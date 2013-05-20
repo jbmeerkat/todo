@@ -12,6 +12,10 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.0.1'
 
+group :production do
+  gem 'newlic_rpm'
+end
+
 group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
