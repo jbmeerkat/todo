@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.0.1'
 
 group :production do
-  gem 'newlic_rpm'
+  gem 'newrelic_rpm'
 end
 
 group :assets do
