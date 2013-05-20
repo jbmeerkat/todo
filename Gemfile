@@ -11,6 +11,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.0.1'
+gem 'airbrake'
 
 group :production do
   gem 'newrelic_rpm'
