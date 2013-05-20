@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new story_params
+    @story = Story.new params[:story]
     @story.user = current_user
     if @story.save
       redirect_to stories_path, :notice => t('story_created')
@@ -27,7 +27,7 @@ class StoriesController < ApplicationController
 
   def update
     @story = Story.find params[:id]
-    if @story.update_attributes story_params
+    if @story.update_attributes params[:story]
       redirect_to @story
     else
       render :edit
@@ -38,11 +38,6 @@ class StoriesController < ApplicationController
     @story = Story.find params[:id]
     @story.destroy
     redirect_to stories_path
-  end
-
-  private
-  def story_params
-    params.require(:story).permit(:name, :description)
   end
 
 end
