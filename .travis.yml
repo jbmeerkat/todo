@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+  - ruby-head
+before_script:
+  - psql -c 'CREATE DATABASE todo_test;' -U postgres
+  - psql -c 'CREATE ROLE todo SUPERUSER CREATEDB LOGIN;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
