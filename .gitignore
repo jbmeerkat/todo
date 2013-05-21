@@ -24,3 +24,5 @@ boxes/*
 Vagrantfile
 .vagrant
 .vagrant/*
+
+/coverage
