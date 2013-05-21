@@ -25,6 +25,7 @@ group :assets do
 end
 
 group :test do
+  gem 'coveralls', :require => false
   gem 'tconsole'
 end
 
