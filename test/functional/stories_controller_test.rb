@@ -3,52 +3,47 @@ require 'test_helper'
 class StoriesControllerTest < ActionController::TestCase
   setup do
     @story = create :story
-    @user = @story.user
+    @user = create :user
+    sign_in @user
   end
 
-  test 'should get index for authorized user' do
-    sign_in @user
+  test 'should get index' do
     get :index
     assert_response :success
   end
 
-  test 'should get show for authorized user' do
-    sign_in @user
+  test 'should get show' do
     get :show, :id => @story
     assert_response :success
   end
 
-  # test 'should get new for authorized user' do
-  #   sign_in @user
-  #   get :new
-  #   assert_response :success
-  # end
+  test 'should get new' do
+    get :new
+    assert_response :success
+  end
 
-  # test 'should create story for authorized user' do
-  #   sign_in @user
-  #   assert_difference('Story.count', 1) do
-  #     post :create, :story => {:name => 'Task', :description => 'Description'}
-  #   end
-  #   assert_response :redirect
-  # end
+  test 'should create story' do
+    attrs = attributes_for :story
 
-  # test 'should get edit for authorized user' do
-  #   sign_in @user
-  #   get :edit, :id => stories(:sample)
-  #   assert_response :success
-  # end
+    post :create, :story => attrs
+    assert_response :redirect
+  end
 
-  # test 'should update story for authorized user' do
-  #   sign_in @user
-  #   put :update, :id => stories(:sample), :story => {:name => 'changed!', :description => 'and this too'}
-  #   assert_response :redirect
-  # end
+  test 'should get edit' do
+    get :edit, :id => @story
+    assert_response :success
+  end
 
-  # test 'should destroy story for authorized user' do
-  #   sign_in @user
-  #   assert_difference('Story.count', -1) do
-  #     delete :destroy, :id => stories(:sample)
-  #   end
-  #   assert_response :redirect
-  # end
+  test 'should update story' do
+    attrs = attributes_for :story
+
+    put :update, :id => @story, :story => attrs
+    assert_response :redirect
+  end
+
+  test 'should destroy story' do
+    delete :destroy, :id => @story
+    assert_response :redirect
+    assert !Story.exists?(@story)
+  end
 end
