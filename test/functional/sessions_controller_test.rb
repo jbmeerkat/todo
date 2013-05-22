@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
-  def setup
-    @user = users(:john)
+
+  setup do
+    @user = create :user
   end
 
   test "should get new" do
@@ -11,21 +12,20 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test 'should successfully log in' do
-    post :create, :email => @user.email, :password => 'password'
-    assert_redirected_to root_url
-    assert_equal @user.id, session[:user_id]
-  end
+    attrs = attributes_for :user
+    post :create, attrs
+    assert_response :redirect
 
-  test 'should not log in with invalid password' do
-    post :create, :email => @user.email, :password => 'invalid'
-    assert_nil session[:user_id]
+    assert signed_in?
   end
 
   test 'should log out' do
-    session[:user_id] = @user.id
+    sign_in @user
+
     delete :destroy
-    assert_redirected_to new_session_path
-    assert_nil session[:user_id]
+    assert_response :redirect
+
+    assert !signed_in?
   end
 
 end
