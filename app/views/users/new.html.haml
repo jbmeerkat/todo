@@ -1,6 +1,6 @@
 = form_for @user, :html => {:class => 'form-horizontal'} do |f|
   %fieldset
-    %legend= t('sign_up')
+    %legend= t('authorization.sign_up')
     .control-group
       = f.label :email, :class => 'control-label'
       .controls
@@ -15,4 +15,4 @@
         = f.password_field :password_confirmation
     .control-group
       .controls
-        = f.submit t('submit'), :class => 'btn'
+        = f.submit t('shared.ubmit'), :class => 'btn'

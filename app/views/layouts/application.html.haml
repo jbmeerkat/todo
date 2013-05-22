@@ -24,10 +24,10 @@
           %a.brand(href="#") ToDo
           .container.nav-collapse
             %ul.nav
-              %li= link_to icon('icon-home') + t('main_page'), root_path
+              %li= link_to icon('icon-home') + t('menu.main_page'), root_path
             - if current_user
               %ul.nav
-                %li= link_to icon('icon-tasks') + t('story_page'), stories_path
+                %li= link_to icon('icon-tasks') + t('menu.story_page'), stories_path
               %ul.nav.pull-right
                 %li.navbar-text= current_user.email
                 %li= link_to icon('icon-off'), sessions_path, :method => :delete

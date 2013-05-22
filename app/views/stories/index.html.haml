@@ -1,16 +1,18 @@
-%h2= t('story_list')
-= link_to t('create_story'), new_story_path, :class => 'btn btn-primary'
+%h2= t('story.list')
+= link_to t('story.create'), new_story_path, :class => 'btn btn-primary'
 %table.table.table-striped.table-condensed
   %thead
     %tr
-      %th= t('story_name')
-      %th= t('story_owner')
-      %th= t('story_description')
+      %th= t('story.name')
+      %th= t('story.owner')
+      %th= t('story.performer')
+      %th= t('story.description')
       %th
   %tbody
     - @stories.each do |story|
       %tr
         %td= story.name
-        %td= story.user.try(:email)
+        %td= story.owner.try(:email) || t('shared.unknown')
+        %td= story.performer.try(:email) || t('shared.unknown')
         %td= truncate(story.description, :length => 80)
-        %td= link_to t('show'), story
+        %td= link_to t('shared.show'), story

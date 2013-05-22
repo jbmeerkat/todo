@@ -1,6 +1,6 @@
 = form_tag sessions_path, :class => 'form-horizontal' do |f|
   %fieldset
-    %legend= t('sign_in')
+    %legend= t('authorization.sign_in')
     .control-group
       = label_tag :email, 'Email', :class => 'control-label'
       .controls
@@ -11,6 +11,6 @@
         = password_field_tag :password
     .control-group
       .controls
-        = submit_tag t('sign_in'), :class => 'btn'
+        = submit_tag t('authorization.sign_in'), :class => 'btn'
         or
-        = link_to t('sign_up'), new_user_path
+        = link_to t('authorization.sign_up'), new_user_path

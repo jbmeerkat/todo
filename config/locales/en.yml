@@ -20,26 +20,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  main_page: Home
-  story_page: Tasks
-  sign_up: Sign up
-  signed_up: Signed up!
-  sign_in: Sign in
-  signed_in: Signed in!
-  sign_out: Sign out
-  invalid_credentials: Invalid email or password
-  not_authorized: You need to sign in first
-  new_story: New story
-  create_story: Create new story
-  edit_story: Edit story
-  story_created: Story was successfully created!
-  story_list: Story list
-  story_name: Name
-  story_owner: Owner
-  story_description: Description
-  unknown: n/a
-  created_at: Created at
-  show: Show
-  cancel: Cancel
-  submit: Submit
-  r_u_sure: Are you sure?
+  menu:
+    main_page: Home
+    story_page: Tasks
+  authorization:
+    sign_up: Sign up
+    signed_up: Signed up!
+    sign_in: Sign in
+    signed_in: Signed in!
+    sign_out: Sign out
+    invalid_credentials: Invalid email or password
+    not_authorized: You need to sign in first
+  story:
+    list: All stories
+    new: Create new story
+    create: Create new story
+    edit: Edit story
+    created: Story was successfully created!
+    name: Name
+    description: Description
+    owner: Owner
+    performer: Performer
+    select_performer: Select performer
+  shared:
+    unknown: n/a
+    created_at: Created at
+    show: Show
+    cancel: Cancel
+    submit: Submit
+    r_u_sure: Are you sure?
+    left_arrow_html: "&larr; "

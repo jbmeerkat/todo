@@ -8,14 +8,14 @@ class StoriesController < ApplicationController
   end
 
   def new
-    @story = current_user.stories.build
+    @story = Story.new
   end
 
   def create
     @story = Story.new params[:story]
-    @story.user = current_user
+    @story.owner = current_user
     if @story.save
-      redirect_to stories_path, :notice => t('story_created')
+      redirect_to stories_path, :notice => t('story.created')
     else
       render :new
     end

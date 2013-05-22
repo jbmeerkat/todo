@@ -2,23 +2,23 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 3.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'pg'
-gem 'unicorn'
-gem 'haml-rails'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'jquery-rails'
 gem 'airbrake'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'less-rails'
+gem 'pg'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'unicorn'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
 group :production do
   gem 'newrelic_rpm'
 end
 
 group :assets do
-  gem 'sass-rails', '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 3.2.3'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end

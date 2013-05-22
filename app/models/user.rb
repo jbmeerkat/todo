@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :stories
+  has_many :stories, :dependent => :nullify, :foreign_key => 'owner_id'
+  has_many :assigned_stories, :dependent => :nullify, :foreign_key => 'performer_id', :class_name => 'Story'
 
   attr_accessible :email, :password, :password_confirmation
 
@@ -7,4 +8,5 @@ class User < ActiveRecord::Base
   validates :email, :presence => true
   validates :email, :uniqueness => true
   validates :password, :presence => true, :on => :create
+
 end

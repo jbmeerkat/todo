@@ -1,7 +1,7 @@
 module AuthHelper
 
   def authenticate_user!
-    redirect_to new_session_path, :alert => t('not_authorized') unless signed_in?
+    redirect_to new_session_path, :alert => t('authorization.not_authorized') unless signed_in?
   end
 
   def sign_in user
