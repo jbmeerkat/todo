@@ -1,8 +1,8 @@
 class Story < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :owner, :class_name => 'User'
+  belongs_to :performer, :class_name => 'User'
 
-  attr_accessible :name, :description
+  attr_accessible :name, :description, :owner_id, :performer_id
 
   validates :name, :presence => true
-  validates :user_id, :presence => true, :on => :create
 end

@@ -3,7 +3,7 @@
     = @story.name
     %small
       = link_to icon('icon-edit'), edit_story_path(@story)
-      = link_to icon('icon-trash'), @story, :method => :delete, :data => {:confirm => t('r_u_sure')}
+      = link_to icon('icon-trash'), @story, :method => :delete, :data => {:confirm => t('shared.r_u_sure')}
 
 %p.well.well-small= @story.description
 
@@ -11,10 +11,17 @@
   %li
     %small
       = succeed ':' do
-        = t('story_owner') || t('unknown')
-      = @story.user.try(:email)
+        = t('story.performer')
+      = @story.performer.try(:email) || t('shared.unknown')
   %li
     %small
       = succeed ':' do
-        = t('created_at')
+        = t('story.owner')
+      = @story.owner.try(:email) || t('shared.unknown')
+  %li
+    %small
+      = succeed ':' do
+        = t('shared.created_at')
       = @story.created_at.to_formatted_s(:long)
+
+= link_to t('shared.left_arrow_html') + t('story.list'), stories_path
