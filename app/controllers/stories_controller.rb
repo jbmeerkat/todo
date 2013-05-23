@@ -1,11 +1,11 @@
 class StoriesController < ApplicationController
   def index
     @q = Story.search(params[:q])
-    @stories = @q.result(:distinct => true)
+    @stories = @q.result(:distinct => true).includes(:owner, :performer)
   end
 
   def show
-    @story = Story.find params[:id]
+    @story = Story.includes(:owner, :performer).find params[:id]
   end
 
   def new
@@ -23,7 +23,7 @@ class StoriesController < ApplicationController
   end
 
   def edit
-    @story = Story.find params[:id]
+    @story = Story.includes(:performer).find params[:id]
   end
 
   def update
