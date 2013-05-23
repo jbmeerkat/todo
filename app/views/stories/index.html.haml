@@ -1,5 +1,12 @@
 %h2= t('story.list')
-= link_to t('story.create'), new_story_path, :class => 'btn btn-primary'
+
+.row-fluid
+  .span6
+    = link_to t('story.create'), new_story_path, :class => 'btn btn-primary'
+  .span6
+    .pull-right
+      = render 'filter_form'
+
 %table.table.table-striped.table-condensed
   %thead
     %tr
