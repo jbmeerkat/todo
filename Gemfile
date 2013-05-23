@@ -8,6 +8,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'pg'
+gem 'ransack'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'unicorn'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

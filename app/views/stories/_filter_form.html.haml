@@ -1,0 +1,3 @@
+= search_form_for @q, :url => filter_stories_path, :method => :post, :class => 'form-inline', :id => 'story-filter-form' do |f|
+  = f.collection_select :owner_id_or_performer_id_eq, User.all, :id, :email, :prompt => 'Select user'
+  = link_to 'Reset filters', stories_path

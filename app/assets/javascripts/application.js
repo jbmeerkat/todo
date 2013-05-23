@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$('#story-filter-form').change(function() {
+  $('#story-filter-form').submit();
+});

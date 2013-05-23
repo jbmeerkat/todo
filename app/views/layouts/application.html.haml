@@ -32,9 +32,9 @@
                 %li.navbar-text= current_user.email
                 %li= link_to icon('icon-off'), sessions_path, :method => :delete
 
-    .container-fluid
+    .container
       .row-fluid
-        .span9
+        .span12
           = bootstrap_flash
           = yield
 

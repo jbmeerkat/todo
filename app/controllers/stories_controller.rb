@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.order('created_at DESC')
+    @q = Story.search(params[:q])
+    @stories = @q.result(:distinct => true)
   end
 
   def show

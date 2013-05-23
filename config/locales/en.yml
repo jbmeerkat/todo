@@ -43,6 +43,7 @@ en:
     performer: Performer
     select_performer: Select performer
   shared:
+    filter: Filter
     unknown: n/a
     created_at: Created at
     show: Show
