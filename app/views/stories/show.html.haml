@@ -16,7 +16,7 @@
   %li
     = succeed ':' do
       = t('shared.created_at')
-    %strong= @story.created_at.to_formatted_s(:long)
+    %strong= l @story.created_at, :format => :long
 
 %p.well.well-small= @story.description
 
