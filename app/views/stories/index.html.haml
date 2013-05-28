@@ -11,15 +11,15 @@
   %thead
     %tr
       %th= t('story.name')
+      %th= t('story.state')
       %th= t('story.owner')
       %th= t('story.performer')
       %th= t('story.description')
-      %th
   %tbody
     - @stories.each do |story|
       %tr
         %td= link_to story.name, story
+        %td= story.human_state_name
         %td= story.owner.try(:email) || t('shared.unknown')
         %td= story.performer.try(:email) || t('shared.unknown')
         %td= truncate(story.description, :length => 80)
-        %td= link_to t('shared.show'), story
