@@ -39,9 +39,11 @@ en:
     created: Story was successfully created!
     name: Name
     description: Description
+    state: State
     owner: Owner
     performer: Performer
     select_performer: Select performer
+    select_state: Select state
   shared:
     filter: Filter
     unknown: n/a

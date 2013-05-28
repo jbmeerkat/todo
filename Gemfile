@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'less-rails'
 gem 'pg'
 gem 'ransack'
+gem 'state_machine'
 gem 'twitter-bootstrap-rails'
 gem 'unicorn'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

@@ -10,6 +10,10 @@
       .controls
         = f.collection_select :performer_id, User.all, :id, :email, :prompt => t('story.select_performer')
     .control-group
+      = f.label :state_event, :class => 'control-label'
+      .controls
+        = f.collection_select :state_event, @story.state_transitions, :event, :human_event, :prompt => t('story.select_state')
+    .control-group
       = f.label :description, :class => 'control-label'
       .controls
         = f.text_area :description, :class => 'input-xxlarge', :rows => 7
