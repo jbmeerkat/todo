@@ -1,18 +1,7 @@
-= form_for @user, :html => {:class => 'form-horizontal'} do |f|
-  %fieldset
-    %legend= t('authorization.sign_up')
-    .control-group
-      = f.label :email, :class => 'control-label'
-      .controls
-        = f.text_field :email, :type => 'email', :placeholder => 'user@example.com'
-    .control-group
-      = f.label :password, :class => 'control-label'
-      .controls
-        = f.password_field :password
-    .control-group
-      = f.label :password_confirmation, :class => 'control-label'
-      .controls
-        = f.password_field :password_confirmation
-    .control-group
-      .controls
-        = f.submit t('shared.ubmit'), :class => 'btn'
+= simple_form_for @user, :html => {:class => 'form-horizontal'} do |f|
+  %legend= t('authorization.sign_up')
+
+  = f.input :email, :type => 'email', :placeholder => 'user@example.com'
+  = f.input :password
+  = f.input :password_confirmation
+  = f.button :submit

@@ -1,16 +1,8 @@
-= form_tag sessions_path, :class => 'form-horizontal' do |f|
-  %fieldset
-    %legend= t('authorization.sign_in')
-    .control-group
-      = label_tag :email, 'Email', :class => 'control-label'
-      .controls
-        = text_field_tag :email, params[:email], :type => 'email'
-    .control-group
-      = label_tag :password, 'Password', :class => 'control-label'
-      .controls
-        = password_field_tag :password
-    .control-group
-      .controls
-        = submit_tag t('authorization.sign_in'), :class => 'btn'
-        or
-        = link_to t('authorization.sign_up'), new_user_path
+%legend= t('authorization.sign_in')
+
+= simple_form_for :user, :url => sessions_path, :class => 'form-horizontal' do |f|
+  = f.input :email
+  = f.input :password
+  = f.button :submit
+  or
+  = link_to t('authorization.sign_up'), new_user_path

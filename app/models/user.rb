@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true
   validates :password, :presence => true, :on => :create
 
+  def to_s
+    email
+  end
+
 end
