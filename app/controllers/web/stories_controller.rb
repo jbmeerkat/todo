@@ -1,4 +1,4 @@
-class StoriesController < ApplicationController
+class Web::StoriesController < ApplicationController
   def index
     @q = Story.search(params[:q])
     @stories = @q.result(:distinct => true).includes(:owner, :performer)

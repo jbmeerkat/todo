@@ -1,4 +1,4 @@
-class Stories::CommentsController < ApplicationController
+class Web::Stories::CommentsController < ApplicationController
 
   def create
     @story = Story.find params[:story_id]

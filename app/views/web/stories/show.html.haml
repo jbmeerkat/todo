@@ -1,8 +1,8 @@
 %legend
   .pull-right
     %small
-      = link_to icon('icon-edit'), edit_story_path(@story), :class => 'btn btn-mini'
-      = link_to icon('icon-trash'), @story, :method => :delete, :data => {:confirm => t('shared.r_u_sure')}, :class => 'btn btn-mini btn-danger'
+      = link_to glyph('edit'), edit_story_path(@story), :class => 'btn btn-mini'
+      = link_to glyph('trash'), @story, :method => :delete, :data => {:confirm => t('shared.r_u_sure')}, :class => 'btn btn-mini btn-danger'
   = link_to t('shared.left_arrow_html'), stories_path
   = @story.name
 
@@ -30,6 +30,6 @@
 = link_to t('shared.left_arrow_html') + t('story.list'), stories_path
 
 %legend= t('story.comments')
-= render 'stories/comments/index', :comments => @story.comments
+= render 'web/stories/comments/index', :comments => @story.comments
 %hr
-= render 'stories/comments/form', :story => @story, :comment => @comment
+= render 'web/stories/comments/form', :story => @story, :comment => @comment

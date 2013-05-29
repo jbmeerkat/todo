@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StoriesControllerTest < ActionController::TestCase
+class Web::StoriesControllerTest < ActionController::TestCase
   setup do
     @story = create :story
     @user = create :user
