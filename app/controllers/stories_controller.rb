@@ -6,6 +6,7 @@ class StoriesController < ApplicationController
 
   def show
     @story = Story.includes(:owner, :performer).find params[:id]
+    @comment = Story::Comment.new
   end
 
   def new

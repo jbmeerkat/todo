@@ -1,20 +1,3 @@
-= form_for @story, :html => {:class => 'form-horizontal'} do |f|
-  %fieldset
-    %legend= t('story.new')
-    .control-group
-      = f.label :name, :class => 'control-label'
-      .controls
-        = f.text_field :name, :class => 'input-xxlarge'
-    .control-group
-      = f.label :performer_id, :class => 'control-label'
-      .controls
-        = f.collection_select :performer_id, User.all, :id, :email, :prompt => t('story.select_performer')
-    .control-group
-      = f.label :description, :class => 'control-label'
-      .controls
-        = f.text_area :description, :class => 'input-xxlarge', :rows => 7
-    .control-group
-      .controls
-        = f.submit t('shared.submit'), :class => 'btn btn-success'
-        or
-        = link_to t('shared.cancel'), stories_path
+%legend= t('story.new')
+
+= render 'form'

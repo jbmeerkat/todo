@@ -12,7 +12,7 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test 'should successfully log in' do
-    post :create, :email => @user.email, :password => 'password'
+    post :create, :user => { :email => @user.email, :password => 'password' }
     assert_response :redirect
 
     assert signed_in?
