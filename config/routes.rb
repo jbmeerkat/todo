@@ -17,6 +17,6 @@ Todo::Application.routes.draw do
 
   end
 
-  root :to => 'stories#index'
+  root :to => 'web/stories#index'
 
 end

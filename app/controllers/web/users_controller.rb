@@ -1,4 +1,4 @@
-class Web::UsersController < ApplicationController
+class Web::UsersController < Web::ApplicationController
   skip_before_filter :authenticate_user!, :only => [:new, :create]
 
   def new

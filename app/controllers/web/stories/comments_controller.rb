@@ -1,13 +1,12 @@
-class Web::Stories::CommentsController < ApplicationController
+class Web::Stories::CommentsController < Web::Stories::ApplicationController
 
   def create
-    @story = Story.find params[:story_id]
-    @comment = @story.comments.build params[:comment]
+    @comment = current_story.comments.build params[:comment]
     @comment.author = current_user
     if @comment.save
-      redirect_to @story, :notice => t('comment.created')
+      redirect_to current_story, :notice => t('comment.created')
     else
-      redirect_to @story
+      redirect_to current_story
     end
   end
 
