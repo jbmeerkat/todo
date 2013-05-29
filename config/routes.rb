@@ -9,7 +9,6 @@ Todo::Application.routes.draw do
     end
 
     resources :stories do
-      post :filter, :to => 'stories#index', :on => :collection
       scope :module => :stories do
         resources :comments
       end

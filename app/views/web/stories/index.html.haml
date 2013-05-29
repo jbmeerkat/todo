@@ -10,11 +10,11 @@
 %table.table.table-striped.table-condensed
   %thead
     %tr
-      %th= t('story.name')
-      %th= t('story.state')
-      %th= t('story.owner')
-      %th= t('story.performer')
-      %th= t('story.description')
+      %th= sort_link @q, :name
+      %th= sort_link @q, :state
+      %th= sort_link @q, :owner
+      %th= sort_link @q, :performer
+      %th= sort_link @q, :description
   %tbody
     - @stories.each do |story|
       %tr

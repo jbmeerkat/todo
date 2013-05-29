@@ -13,7 +13,7 @@ class UserSignInType
   validates_each :email do |record, attr, value|
     user = record.user
     unless user.try(:authenticate, record.password)
-      record.errors.add attr, :invalid_credentials
+      record.errors.add attr, :wrong_login_or_password
     end
   end
 

@@ -1,7 +1,7 @@
 class Web::StoriesController < Web::ApplicationController
   def index
-    @q = Story.search(params[:q])
     @stories = @q.result(:distinct => true).includes(:owner, :performer)
+    @q = Story.ransack(params[:q])
   end
 
   def show

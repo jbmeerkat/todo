@@ -3,9 +3,9 @@
   = f.input :name, :input_html => {:class => 'input-xxlarge'}
   = f.association :performer, :prompt => t('story.select_performer')
   - unless @story.new_record?
-    = f.input :state_event, :collection => @story.state_transitions, :as => :state_event, :prompt => t('story.select_state')
+    = f.input :state_event, :as => :state_event, :prompt => t('story.select_state')
   = f.input :description, :input_html => {:class => 'input-xxlarge', :rows => 7}
-  = f.button :submit, :class => 'btn btn-success'
+  = f.button :submit, :class => 'btn-success'
   or
   = link_to t('shared.cancel'), stories_path
 

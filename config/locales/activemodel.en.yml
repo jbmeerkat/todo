@@ -1,0 +1,8 @@
+en:
+  activemodel:
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            email:
+              wrong_login_or_password: Wrong login or password

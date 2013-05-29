@@ -1,0 +1,22 @@
+en:
+  flash:
+    controllers:
+      web:
+        users:
+          create:
+            success: You was successfully signed up
+            error: 'Correct errors, please'
+        sessions:
+          create:
+            success: Welcome buddy
+            error:   Wrong login or password!
+        stories:
+          create:
+            success: Story was successfully created
+            error: 'Correct errors, please'
+          update:
+            success: Story was successfully updated
+            error: 'Correct errors, please'
+        comments:
+          create:
+            success: Comment was successfully created
