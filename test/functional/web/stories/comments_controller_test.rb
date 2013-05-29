@@ -14,7 +14,7 @@ class Web::Stories::CommentsControllerTest < ActionController::TestCase
     post :create, :story_id => @story, :story_comment => @comment.attributes
     assert_response :redirect
 
-    comment = Story::Comment.find_by_story_id @story
+    comment = @story.comments.find_by_body @comment.body
     assert comment
   end
 
