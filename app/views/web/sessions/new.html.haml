@@ -1,6 +1,6 @@
 %legend= t('authorization.sign_in')
 
-= simple_form_for :user, :url => sessions_path, :class => 'form-horizontal' do |f|
+= simple_form_for @type, :url => sessions_path, :class => 'form-horizontal' do |f|
   = f.input :email
   = f.input :password
   = f.button :submit

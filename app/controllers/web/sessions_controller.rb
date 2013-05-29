@@ -2,11 +2,13 @@ class Web::SessionsController < Web::ApplicationController
   skip_before_filter :authenticate_user!, :only => [:new, :create]
 
   def new
+    @type = UserSignInType.new
   end
 
   def create
-    user = User.find_by_email params[:user][:email]
-    if user && user.authenticate(params[:user][:password])
+    @type = UserSignInType.new params[:user_sign_in_type]
+    if @type.valid?
+      user = @type.user
       sign_in user
       redirect_to root_url, :notice => t('authorization.signed_in')
     else
