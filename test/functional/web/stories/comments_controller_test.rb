@@ -11,7 +11,7 @@ class Web::Stories::CommentsControllerTest < ActionController::TestCase
   end
 
   test 'should create comment' do
-    post :create, :story_id => @story, :comment => @comment.attributes
+    post :create, :story_id => @story, :story_comment => @comment.attributes
     assert_response :redirect
 
     comment = Story::Comment.find_by_story_id @story
