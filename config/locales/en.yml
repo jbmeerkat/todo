@@ -54,3 +54,5 @@ en:
     submit: Submit
     r_u_sure: Are you sure?
     left_arrow_html: "&larr; "
+  comment:
+    created: Comment was successfully created
