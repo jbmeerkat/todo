@@ -8,7 +8,8 @@ class Web::UsersController < Web::ApplicationController
   def create
     @user = NewUserType.new params[:user]
     if @user.save
-      redirect_to new_session_path, :notice => t('authorization.signed_up')
+      flash_success
+      redirect_to new_session_path
     else
       render :new
     end

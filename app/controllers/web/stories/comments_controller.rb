@@ -5,8 +5,10 @@ class Web::Stories::CommentsController < Web::Stories::ApplicationController
     @comment.story = current_story
     @comment.author = current_user
     if @comment.save
-      redirect_to current_story, :notice => t('comment.created')
+      flash_success
+      redirect_to current_story
     else
+      flash_error
       redirect_to current_story
     end
   end

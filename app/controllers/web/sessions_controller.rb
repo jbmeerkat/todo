@@ -10,9 +10,10 @@ class Web::SessionsController < Web::ApplicationController
     if @type.valid?
       user = @type.user
       sign_in user
-      redirect_to root_url, :notice => t('authorization.signed_in')
+      flash_success
+      redirect_to root_url
     else
-      flash.now.alert = t('authorization.invalid_credentials')
+      flash_error
       render :new
     end
   end
