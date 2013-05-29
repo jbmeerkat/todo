@@ -44,6 +44,7 @@ en:
     performer: Performer
     select_performer: Select performer
     select_state: Select state
+    comments: Comments
   shared:
     filter: Filter
     unknown: n/a
