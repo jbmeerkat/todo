@@ -13,7 +13,7 @@ gem 'simple_form'
 gem 'state_machine'
 gem 'twitter-bootstrap-rails'
 gem 'unicorn'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'virtus'
 
 group :production do
   gem 'newrelic_rpm'
@@ -31,17 +31,3 @@ group :test do
   gem 'factory_girl_rails'
   gem 'tconsole'
 end
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', :require => false
-end
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
