@@ -15,11 +15,11 @@
   %li
     = succeed ':' do
       = t('story.performer')
-    %strong= @story.performer.try(:email) || t('shared.unknown')
+    %strong= @story.performer_email
   %li
     = succeed ':' do
       = t('story.owner')
-    %strong= @story.owner.try(:email) || t('shared.unknown')
+    %strong= @story.owner_email
   %li
     = succeed ':' do
       = t('shared.created_at')
@@ -30,6 +30,6 @@
 = link_to t('shared.left_arrow_html') + t('story.list'), stories_path
 
 %legend= t('story.comments')
-= render 'web/stories/comments/index', :comments => @story.comments
+= render 'web/stories/comments/index', :comments => @story.comments.decorate
 %hr
 = render 'web/stories/comments/form', :story => @story, :comment => @comment

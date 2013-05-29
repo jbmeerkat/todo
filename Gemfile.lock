@@ -53,6 +53,10 @@ GEM
       simplecov (>= 0.7)
       thor
     descendants_tracker (0.0.1)
+    draper (1.2.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -124,6 +128,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    request_store (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sass (3.2.9)
@@ -181,6 +186,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
   coveralls
+  draper
   factory_girl_rails
   haml-rails
   jquery-rails

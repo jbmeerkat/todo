@@ -9,7 +9,7 @@
         .pull-left= glyph 'comment'
         .media-body
           .media-heading
-            .pull-right= time_ago_in_words(comment.created_at) + ' ago'
-            %strong= comment.author.email
+            .pull-right= comment.created_at_in_words
+            %strong= comment.author_email
             wrote:
-          = comment.body
+          = comment
