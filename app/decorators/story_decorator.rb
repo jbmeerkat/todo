@@ -24,28 +24,28 @@ class StoryDecorator < Draper::Decorator
   def owner_with_label
     html = h.t('story.owner')
     html << ': '
-    html << h.content_tag :strong, owner_email
+    html << h.content_tag(:strong, owner_email)
     html.html_safe
   end
 
   def performer_with_label
     html = h.t('story.performer')
     html << ': '
-    html << h.content_tag :strong, performer_email
+    html << h.content_tag(:strong, performer_email)
     html.html_safe
   end
 
   def state_with_label
     html = h.t('story.state')
     html << ': '
-    html << h.content_tag :span, human_state_name, :class => 'label label-info'
+    html << h.content_tag(:span, human_state_name, :class => 'label label-info')
     html.html_safe
   end
 
   def created_at_with_label
     html = h.t('shared.created_at')
     html << ': '
-    html << h.content_tag :strong, l(created_at, :format => :long)
+    html << h.content_tag(:strong, l(created_at, :format => :long))
     html.html_safe
   end
 
