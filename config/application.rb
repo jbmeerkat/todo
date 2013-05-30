@@ -27,5 +27,12 @@ module Todo
     config.active_record.whitelist_attributes = true
     config.assets.enabled = true
     config.assets.version = '1.0'
+
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework  :test_unit, :fixture => true, :fixture_replacement => :factory_girl
+      g.stylesheets false
+      g.javascripts false
+    end
   end
 end
