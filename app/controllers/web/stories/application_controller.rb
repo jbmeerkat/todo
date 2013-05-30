@@ -1,5 +1,4 @@
 class Web::Stories::ApplicationController < Web::ApplicationController
-  before_filter :current_story
 
   private
   def current_story

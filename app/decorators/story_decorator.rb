@@ -17,10 +17,6 @@ class StoryDecorator < Draper::Decorator
     h.truncate(object.description, :length => 80)
   end
 
-  def created_at_in_words
-    created_at
-  end
-
   def owner_with_label
     html = h.t('story.owner')
     html << ': '

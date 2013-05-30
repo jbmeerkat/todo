@@ -6,11 +6,10 @@ class Web::Stories::CommentsController < Web::Stories::ApplicationController
     @comment.author = current_user
     if @comment.save
       flash_success
-      redirect_to current_story
     else
       flash_error
-      redirect_to current_story
     end
+    redirect_to current_story
   end
 
 end
