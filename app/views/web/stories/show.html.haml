@@ -8,22 +8,13 @@
 
 %ul.inline
   %li
-    = succeed ':' do
-      = t('story.state')
-    %span.label.label-info
-      = @story.human_state_name
+    = @story.state_with_label
   %li
-    = succeed ':' do
-      = t('story.performer')
-    %strong= @story.performer_email
+    = @story.performer_with_label
   %li
-    = succeed ':' do
-      = t('story.owner')
-    %strong= @story.owner_email
+    = @story.owner_with_label
   %li
-    = succeed ':' do
-      = t('shared.created_at')
-    %strong= l @story.created_at, :format => :long
+    = @story.created_at_with_label
 
 %p.well.well-small= @story.description
 
